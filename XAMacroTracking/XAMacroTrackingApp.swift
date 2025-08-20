@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+
 @main
 struct XAMacroTrackingApp: App {
+    
+    // instancias
+    @StateObject private var userDataVM = UserDataViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userDataVM)
         }
     }
 }
