@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 import LocalAuthentication // biometric
 
-struct LogIn_SigInForm: View {
+struct LogInSigInForm: View {
     
     @State private var isAuthenticated : Bool = false
     @State private var showError : Bool = false
@@ -56,5 +56,5 @@ struct LogIn_SigInForm: View {
 }
 
 #Preview {
-    LogIn_SigInForm()
+    LogInSigInForm()
 }

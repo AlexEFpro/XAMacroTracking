@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
        Logo()
         BasicForm()
@@ -17,7 +18,9 @@ struct ContentView: View {
 }
 
 #Preview {
+    let macroDistributionVM=MacroDistributionVM(userData: UserDataViewModel())
     let userDataVM=UserDataViewModel()
     ContentView()
         .environmentObject(userDataVM)
+        .environmentObject(macroDistributionVM)
 }

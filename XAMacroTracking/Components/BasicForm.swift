@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BasicForm: View {
     @EnvironmentObject private var userDataVM: UserDataViewModel
+    @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
    
     var body: some View {
         Form{
@@ -27,11 +28,11 @@ struct BasicForm: View {
                 
                 Slider(value: $userDataVM.weight, in: 30...200.0, step: 0.1)
                     .padding()
-                Text("Peso:\(userDataVM.weight, specifier: "%.1f")kg" )
+                Text("Peso:\(userDataVM.weight, specifier: "%.1f") kg" )
                     .font(.headline .bold())
                 
                 Slider( value: $userDataVM.height, in: 130...230, step: 0.1)
-                Text("Altura:\(userDataVM.height, specifier: "%.1f")cm")
+                Text("Altura:\(userDataVM.height, specifier: "%.0f")cm")
                     .font(.headline .bold())
                 
                     .padding()
@@ -65,7 +66,8 @@ struct BasicForm: View {
             
                 Button("Calcular"){
                     userDataVM.goToSheet = true;
-                    userDataVM.gastoBasal()
+                    userDataVM.allTheCalcs()
+                    macroDistributionVM.calcPortions()
                 }
                     .font(.title3.bold())
                     .frame(maxWidth:.infinity)
@@ -77,6 +79,8 @@ struct BasicForm: View {
         }
         .sheet(isPresented: $userDataVM.goToSheet){
             MacroCard()
+                .environmentObject(userDataVM)
+                .environmentObject(macroDistributionVM)
                 
         }
     }
@@ -84,7 +88,9 @@ struct BasicForm: View {
 
 #Preview {
     let userDataVM = UserDataViewModel()
+    let macroDistributionVM = MacroDistributionVM(userData: userDataVM)
     
     BasicForm()
         .environmentObject(userDataVM)
+        .environmentObject(macroDistributionVM)
 }

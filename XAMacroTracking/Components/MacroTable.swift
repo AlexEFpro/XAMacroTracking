@@ -9,7 +9,12 @@ import SwiftUI
 
 struct MacroTable: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid{
+            GridRow{
+                Text("Nutriente/Comida")
+                    .font(.title2.bold())
+            }
+        }
     }
 }
 
