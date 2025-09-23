@@ -31,7 +31,7 @@ struct BasicForm: View {
                     .font(.headline .bold())
                 
                 Slider( value: $userDataVM.height, in: 130...230, step: 0.1)
-                Text("Altura:\(userDataVM.height, specifier: "%.1f")cm")
+                Text("Altura:\(userDataVM.height, specifier: "%.0≈f")cm")
                     .font(.headline .bold())
                 
                     .padding()

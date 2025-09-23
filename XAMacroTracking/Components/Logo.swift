@@ -15,23 +15,20 @@ struct Logo: View {
                 Image("DarkLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 80, height: 80,alignment: .trailing)
-                    .padding(.leading)
+                    .frame(width: 250, height: 250,alignment: .center)
                 
             }else{
                 Image("LightLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 80, height: 80,alignment: .trailing)
-                    .padding(.leading)
+                    .frame(width: 350, height: 350,alignment: .center)
+                    
             }
-            Text("MACRO TRACKING")
-                .font(.title .bold())
-                .foregroundStyle(.blue)
+            
                 
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
+        
+        
     }
 }
 
