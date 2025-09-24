@@ -12,11 +12,13 @@ class UserDataViewModel: ObservableObject {
     @Published var height: Double = 0
     @Published var age: Double = 0
     @Published var gender: Gender = .male
-    @Published var activityLevel: ActivityLevel = .lightlyActive
+    @Published var activityLevel: ActivityLevel = .sedentary
     @Published var objective: Objective = .mantain
     @Published var goToSheet : Bool = false
     @Published var isGrCalculated : Bool = false
     @Published var gastoBasalCalculado: Double = 0
+    @Published var geaf: Double = 0
+    @Published var gObjective : Double = 0
     
     
     enum Gender: String, CaseIterable {
@@ -24,10 +26,10 @@ class UserDataViewModel: ObservableObject {
         case female
     }
     enum ActivityLevel: String, CaseIterable {
-        case sedentary
-        case lightlyActive
-        case moderatelyActive
-        case veryActive
+        case sedentary = "No excercise"
+        case lightlyActive = "1-3 /week"
+        case moderatelyActive = "3-5 days/week"
+        case veryActive = "6 >sessions/week"
     }
     enum Objective: String, CaseIterable {
         case cut
@@ -47,7 +49,14 @@ class UserDataViewModel: ObservableObject {
         }
        
     }
-    
+    func geafCalc(){
+        switch activityLevel {
+        case .sedentary : geaf = gastoBasalCalculado
+        case .lightlyActive : geaf = gastoBasalCalculado * 1.375
+        case .moderatelyActive : geaf = gastoBasalCalculado * 1.55
+        case .veryActive : geaf = gastoBasalCalculado * 1.725
+        }
+    }
     
     func cleanResetForm(){
         weight = 0

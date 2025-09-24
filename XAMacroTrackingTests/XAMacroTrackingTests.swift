@@ -31,9 +31,34 @@ struct XAMacroTrackingTests {
         
         
     }
+    
+    @Test("GEAF Test") func geafTest(){
+        //sedentary
+        let vmSedentary = UserDataViewModel()
+        vmSedentary.gastoBasalCalculado = 2500
+        vmSedentary.activityLevel = .sedentary
+        vmSedentary.geafCalc()
+        #expect(vmSedentary.geaf == vmSedentary.gastoBasalCalculado)
+        //lightlyActive
+        let vmLightlyActive = UserDataViewModel()
+        vmLightlyActive.gastoBasalCalculado = 2500
+        vmLightlyActive.activityLevel = .lightlyActive
+        vmLightlyActive.geafCalc()
+        #expect(vmLightlyActive.geaf == vmLightlyActive.gastoBasalCalculado*1.375)
+    // moderatelyActive
+        let vmModeratelyActive = UserDataViewModel()
+        vmModeratelyActive.gastoBasalCalculado = 2500
+        vmModeratelyActive.activityLevel = .moderatelyActive
+        vmModeratelyActive.geafCalc()
+        #expect(vmModeratelyActive.geaf == vmModeratelyActive.gastoBasalCalculado*1.55)
+        //veryActive
+        let vmVeryActive = UserDataViewModel()
+        vmVeryActive.gastoBasalCalculado = 2500
+        vmVeryActive.activityLevel = .veryActive
+        vmVeryActive.geafCalc()
+        #expect(vmVeryActive.geaf == vmVeryActive.gastoBasalCalculado*1.725)
+    }
 
-//    @Test func example() async throws {
-//        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-//    }
+
 
 }
