@@ -15,7 +15,7 @@ struct MacroCard: View {
         Grid{
             GridRow{
                 Text("Gasto Calorico Basal")
-                Text("\(userDataVM.gastoCalculado, specifier: "%.1f")")
+                Text("\(userDataVM.gastoBasalCalculado, specifier: "%.1f")")
             }
             Divider()
             

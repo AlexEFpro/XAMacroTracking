@@ -16,7 +16,7 @@ class UserDataViewModel: ObservableObject {
     @Published var objective: Objective = .mantain
     @Published var goToSheet : Bool = false
     @Published var isGrCalculated : Bool = false
-    @Published var gastoCalculado: Double = 0
+    @Published var gastoBasalCalculado: Double = 0
     
     
     enum Gender: String, CaseIterable {
@@ -24,7 +24,7 @@ class UserDataViewModel: ObservableObject {
         case female
     }
     enum ActivityLevel: String, CaseIterable {
-        
+        case sedentary
         case lightlyActive
         case moderatelyActive
         case veryActive
@@ -36,17 +36,19 @@ class UserDataViewModel: ObservableObject {
     }
     
     func gastoBasal(){
-        if gender == .male{ gastoCalculado = (10*weight)+(6.25*height)-(5*age+5)
+        if gender == .male{ gastoBasalCalculado = (10*weight)+(6.25*height)-(5*age+5)
             
             
         }
         else{
-            gastoCalculado = (10*weight)+(6.25*height)-(5*age)-161
+            gastoBasalCalculado = (10*weight)+(6.25*height)-(5*age)-161
             
             
         }
        
     }
+    
+    
     func cleanResetForm(){
         weight = 0
         height = 0
@@ -54,7 +56,7 @@ class UserDataViewModel: ObservableObject {
         gender = .male
         activityLevel = .lightlyActive
         objective = .mantain
-        gastoCalculado = 0
+        gastoBasalCalculado = 0
     }
 
     

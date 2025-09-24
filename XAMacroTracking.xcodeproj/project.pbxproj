@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		FAD7DF492E83806D00C77685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAEE9D3F2E528A960084CDC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEE9D462E528A960084CDC8;
+			remoteInfo = XAMacroTracking;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		FAD7DF452E83806D00C77685 /* XAMacroTrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XAMacroTrackingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEE9D472E528A960084CDC8 /* XAMacroTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XAMacroTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		FAD7DF462E83806D00C77685 /* XAMacroTrackingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = XAMacroTrackingTests;
+			sourceTree = "<group>";
+		};
 		FAEE9D492E528A960084CDC8 /* XAMacroTracking */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = XAMacroTracking;
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FAD7DF422E83806D00C77685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAEE9D442E528A960084CDC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEE9D492E528A960084CDC8 /* XAMacroTracking */,
+				FAD7DF462E83806D00C77685 /* XAMacroTrackingTests */,
 				FAEE9D482E528A960084CDC8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEE9D472E528A960084CDC8 /* XAMacroTracking.app */,
+				FAD7DF452E83806D00C77685 /* XAMacroTrackingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FAD7DF442E83806D00C77685 /* XAMacroTrackingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD7DF4D2E83806D00C77685 /* Build configuration list for PBXNativeTarget "XAMacroTrackingTests" */;
+			buildPhases = (
+				FAD7DF412E83806D00C77685 /* Sources */,
+				FAD7DF422E83806D00C77685 /* Frameworks */,
+				FAD7DF432E83806D00C77685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD7DF4A2E83806D00C77685 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FAD7DF462E83806D00C77685 /* XAMacroTrackingTests */,
+			);
+			name = XAMacroTrackingTests;
+			packageProductDependencies = (
+			);
+			productName = XAMacroTrackingTests;
+			productReference = FAD7DF452E83806D00C77685 /* XAMacroTrackingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FAEE9D462E528A960084CDC8 /* XAMacroTracking */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAEE9D532E528A960084CDC8 /* Build configuration list for PBXNativeTarget "XAMacroTracking" */;
@@ -77,9 +125,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					FAD7DF442E83806D00C77685 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = FAEE9D462E528A960084CDC8;
+					};
 					FAEE9D462E528A960084CDC8 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				FAEE9D462E528A960084CDC8 /* XAMacroTracking */,
+				FAD7DF442E83806D00C77685 /* XAMacroTrackingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FAD7DF432E83806D00C77685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAEE9D452E528A960084CDC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FAD7DF412E83806D00C77685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAEE9D432E528A960084CDC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FAD7DF4A2E83806D00C77685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAEE9D462E528A960084CDC8 /* XAMacroTracking */;
+			targetProxy = FAD7DF492E83806D00C77685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		FAD7DF4B2E83806D00C77685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4D34SPZZB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = XA.XAMacroTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XAMacroTracking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XAMacroTracking";
+			};
+			name = Debug;
+		};
+		FAD7DF4C2E83806D00C77685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4D34SPZZB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = XA.XAMacroTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XAMacroTracking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XAMacroTracking";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		FAEE9D512E528A960084CDC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -322,6 +444,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FAD7DF4D2E83806D00C77685 /* Build configuration list for PBXNativeTarget "XAMacroTrackingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD7DF4B2E83806D00C77685 /* Debug */,
+				FAD7DF4C2E83806D00C77685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FAEE9D422E528A960084CDC8 /* Build configuration list for PBXProject "XAMacroTracking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
