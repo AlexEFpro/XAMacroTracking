@@ -49,12 +49,22 @@ class UserDataViewModel: ObservableObject {
         }
        
     }
+    
     func geafCalc(){
         switch activityLevel {
         case .sedentary : geaf = gastoBasalCalculado
         case .lightlyActive : geaf = gastoBasalCalculado * 1.375
         case .moderatelyActive : geaf = gastoBasalCalculado * 1.55
         case .veryActive : geaf = gastoBasalCalculado * 1.725
+        }
+    }
+    
+    func gObjectiveCalc(){
+        switch objective {
+        case .cut : gObjective = geaf - 500
+        case .bulk : gObjective = geaf + 500
+        case .mantain : gObjective = geaf
+        
         }
     }
     

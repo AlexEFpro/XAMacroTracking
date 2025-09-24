@@ -58,7 +58,29 @@ struct XAMacroTrackingTests {
         vmVeryActive.geafCalc()
         #expect(vmVeryActive.geaf == vmVeryActive.gastoBasalCalculado*1.725)
     }
-
-
-
+    
+    @Test("Objective calc Test") func objectiveCalcTest(){
+        //cut
+        let vmCut = UserDataViewModel()
+        vmCut.geaf = 2500
+        vmCut.objective = .cut
+        vmCut.gObjectiveCalc()
+        #expect(vmCut.gObjective == 2000)
+        
+        //bulk
+        let vmBulk = UserDataViewModel()
+        vmBulk.geaf = 2500
+        vmBulk.objective = .bulk
+        vmBulk.gObjectiveCalc()
+        #expect(vmBulk.gObjective == 3000)
+        
+        //maintain
+        let vmMaintain = UserDataViewModel()
+        vmMaintain.geaf = 2500
+        vmMaintain.objective = .mantain
+        vmMaintain.gObjectiveCalc()
+        #expect(vmMaintain.gObjective == vmMaintain.geaf)
+        
+        
+    }
 }
