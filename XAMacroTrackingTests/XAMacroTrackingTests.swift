@@ -120,4 +120,18 @@ struct XAMacroTrackingTests {
         
         
     }
+    
+    @Test("Portion Macros Test") func portionMacrosTest(){
+        let userDataVm = UserDataViewModel()
+        let macroVm = MacroDistributionVM(userDataVm: UserDataViewModel())
+        userDataVm.weight = 70
+        userDataVm.objective = .cut
+        macroVm.calcMacroGrams()
+        macroVm.calcMacroPortions()
+        #expect(macroVm.proteinPortions == (macroVm.grProtein*4)/45)
+        #expect(macroVm.carbsPortions == (macroVm.grCarbs*4)/70)
+        #expect(macroVm.fatsPortions == (macroVm.grFats*9)/45)
+        
+        
+    }
 }

@@ -16,24 +16,24 @@ struct MacroCard: View {
         Grid{
             GridRow{
                 Text("Energy requirements")
-                Text("\(userDataVM.gastoBasalCalculado, specifier: "%.1f")")
+                Text("\(userDataVM.gObjective, specifier: "%.1f")")
             }
             Divider()
             
             GridRow{
                 Text("Carbo hidratos")
-                Text("\(macroDistributionVM.grCarbs, specifier: "%.0f")gr")
+                Text("\(macroDistributionVM.carbsPortions, specifier: "%.0f") portions")
             }
             Divider()
                
             GridRow{
                 Text("Proteinas")
-                Text("\(macroDistributionVM.grProtein,specifier: "%.0f") gr")
+                Text("\(macroDistributionVM.proteinPortions,specifier: "%.0f") portions")
             }
             Divider()
             GridRow{
                 Text("Grasa")
-                Text("\(macroDistributionVM.grFats,specifier: "%.0f") gr")
+                Text("\(macroDistributionVM.fatsPortions,specifier: "%.0f") portions")
             }
             Divider()
             Button("Suscribe"){

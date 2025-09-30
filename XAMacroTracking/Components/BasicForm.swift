@@ -66,8 +66,8 @@ struct BasicForm: View {
             
                 Button("Calcular"){
                     userDataVM.goToSheet = true;
-                    userDataVM.gastoBasal();
-                    macroDistributionVM.calcMacroGrams()
+                    //userDataVM.gastoBasal();
+                    macroDistributionVM.allCalculations()
                 }
                     .font(.title3.bold())
                     .frame(maxWidth:.infinity)

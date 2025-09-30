@@ -68,6 +68,12 @@ class UserDataViewModel: ObservableObject {
         }
     }
     
+    func userDataAllCalculations(){
+        gastoBasal();
+        geafCalc();
+        gObjectiveCalc();
+    }
+    
     func cleanResetForm(){
         weight = 0
         height = 0

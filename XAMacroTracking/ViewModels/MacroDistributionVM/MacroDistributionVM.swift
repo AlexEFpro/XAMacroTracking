@@ -45,6 +45,19 @@ class MacroDistributionVM: ObservableObject {
         
     }
     
+    func calcMacroPortions(){
+       
+        proteinPortions = (grProtein * 4) / 45
+        carbsPortions = (grCarbs * 4) / 70
+        fatsPortions = (grFats * 9) / 45
+        
+    }
+    func allCalculations(){
+        userDataVm.userDataAllCalculations()
+        calcMacroGrams()
+        calcMacroPortions()
+    }
+    
     
     
 }
