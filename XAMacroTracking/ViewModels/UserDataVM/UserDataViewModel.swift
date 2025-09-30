@@ -75,13 +75,14 @@ class UserDataViewModel: ObservableObject {
     }
     
     func cleanResetForm(){
-        weight = 0
-        height = 0
-        age = 0
+        weight = 30
+        height = 130
+        age = 15
         gender = .male
         activityLevel = .lightlyActive
         objective = .mantain
         gastoBasalCalculado = 0
+        
     }
 
     

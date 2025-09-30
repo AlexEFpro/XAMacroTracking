@@ -16,7 +16,7 @@ struct MacroCard: View {
         Grid{
             GridRow{
                 Text("Energy requirements")
-                Text("\(userDataVM.gObjective, specifier: "%.1f")")
+                Text("\(userDataVM.gObjective, specifier: "%.0f")")
             }
             Divider()
             
@@ -36,7 +36,7 @@ struct MacroCard: View {
                 Text("\(macroDistributionVM.fatsPortions,specifier: "%.0f") portions")
             }
             Divider()
-            Button("Suscribe"){
+            Button("Clean"){
                 dismiss();
                 userDataVM.cleanResetForm()
                 
