@@ -12,11 +12,19 @@ import SwiftUI
 struct XAMacroTrackingApp: App {
     
     // instancias
-    @StateObject private var userDataVM = UserDataViewModel()
+    @StateObject private var userDataVM : UserDataViewModel
+    @StateObject private var macroDistributionVM : MacroDistributionVM
+    init() {
+            let userData = UserDataViewModel()
+            _userDataVM = StateObject(wrappedValue: userData)
+            _macroDistributionVM = StateObject(wrappedValue: MacroDistributionVM(userDataVm: userData))
+        }
+   
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(userDataVM)
+                .environmentObject(macroDistributionVM)
         }
     }
 }

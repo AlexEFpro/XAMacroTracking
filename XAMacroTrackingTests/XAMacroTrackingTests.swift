@@ -83,4 +83,41 @@ struct XAMacroTrackingTests {
         
         
     }
+    
+    @Test("Gr per Macros") func grPerMacrosTest(){
+        // Cut
+        
+        let userDataCut = UserDataViewModel()
+        let macroVm = MacroDistributionVM(userDataVm: userDataCut)
+        userDataCut.weight = 70
+        userDataCut.objective = .cut
+        
+        macroVm.calcMacroGrams()
+        #expect(macroVm.grProtein == 2.7*userDataCut.weight)
+        #expect(macroVm.grCarbs == 2.0*userDataCut.weight)
+        #expect( macroVm.grFats == 1.0*userDataCut.weight)
+        //mantain
+        let userDataMantain = UserDataViewModel()
+        let macroVmMantain = MacroDistributionVM(userDataVm: userDataMantain)
+        userDataMantain.weight = 70
+        userDataMantain.objective = .mantain
+        macroVmMantain.calcMacroGrams()
+        #expect(macroVmMantain.grProtein == 2.2*userDataMantain.weight)
+        #expect(macroVmMantain.grCarbs == 2.5*userDataMantain.weight)
+        #expect( macroVmMantain.grFats == 1.0*userDataMantain.weight)
+        
+        //bulk
+         let userDataBulk = UserDataViewModel()
+        let macroVmBulk = MacroDistributionVM(userDataVm: userDataBulk)
+        userDataBulk.weight = 70
+        userDataBulk.objective = .bulk
+        macroVmBulk.calcMacroGrams()
+        #expect(macroVmBulk.grProtein == 2.5*userDataBulk.weight)
+        #expect(macroVmBulk.grCarbs == 3.5*userDataBulk.weight)
+        #expect( macroVmBulk.grFats == 1.2*userDataBulk.weight)
+                
+        
+        
+        
+    }
 }

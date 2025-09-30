@@ -10,29 +10,30 @@ import SwiftUI
 struct MacroCard: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var userDataVM: UserDataViewModel
+    @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
    
     var body: some View {
         Grid{
             GridRow{
-                Text("Gasto Calorico Basal")
+                Text("Energy requirements")
                 Text("\(userDataVM.gastoBasalCalculado, specifier: "%.1f")")
             }
             Divider()
             
             GridRow{
                 Text("Carbo hidratos")
-                Text("0gr")
+                Text("\(macroDistributionVM.grCarbs, specifier: "%.0f")gr")
             }
             Divider()
                
             GridRow{
                 Text("Proteinas")
-                Text("0gr")
+                Text("\(macroDistributionVM.grProtein,specifier: "%.0f") gr")
             }
             Divider()
             GridRow{
                 Text("Grasa")
-                Text("0gr")
+                Text("\(macroDistributionVM.grFats,specifier: "%.0f") gr")
             }
             Divider()
             Button("Suscribe"){
@@ -52,6 +53,8 @@ struct MacroCard: View {
 
 #Preview {
     let userDataVM = UserDataViewModel()
+    let macroDistributionVM = MacroDistributionVM(userDataVm: userDataVM)
     MacroCard()
         .environmentObject(userDataVM)
+        .environmentObject(macroDistributionVM)
 }

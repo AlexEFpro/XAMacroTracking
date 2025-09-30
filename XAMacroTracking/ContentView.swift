@@ -18,6 +18,9 @@ struct ContentView: View {
 
 #Preview {
     let userDataVM=UserDataViewModel()
+    let macroDistributionVM=MacroDistributionVM(userDataVm: userDataVM)
+    
     ContentView()
         .environmentObject(userDataVM)
+        .environmentObject(macroDistributionVM)
 }

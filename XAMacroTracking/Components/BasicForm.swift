@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BasicForm: View {
     @EnvironmentObject private var userDataVM: UserDataViewModel
+    @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
    
     var body: some View {
         Form{
@@ -65,7 +66,8 @@ struct BasicForm: View {
             
                 Button("Calcular"){
                     userDataVM.goToSheet = true;
-                    userDataVM.gastoBasal()
+                    userDataVM.gastoBasal();
+                    macroDistributionVM.calcMacroGrams()
                 }
                     .font(.title3.bold())
                     .frame(maxWidth:.infinity)
@@ -77,6 +79,8 @@ struct BasicForm: View {
         }
         .sheet(isPresented: $userDataVM.goToSheet){
             MacroCard()
+                .environmentObject(userDataVM)
+                .environmentObject(macroDistributionVM)
                 
         }
     }
@@ -84,7 +88,10 @@ struct BasicForm: View {
 
 #Preview {
     let userDataVM = UserDataViewModel()
+    let macroDistributionVM = MacroDistributionVM(userDataVm: userDataVM)
     
     BasicForm()
         .environmentObject(userDataVM)
+        .environmentObject(macroDistributionVM)
 }
+
