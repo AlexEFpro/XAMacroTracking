@@ -11,32 +11,33 @@ struct MacroCard: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var userDataVM: UserDataViewModel
     @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
+    @EnvironmentObject private var languageManager: LanguageManager
    
     var body: some View {
         Grid{
             GridRow{
-                Text("Energy requirements")
+                Text(AppTextVm.energyRequirement.localized(for: languageManager.currentLanguage))
                 Text("\(userDataVM.gObjective, specifier: "%.0f")")
             }
             Divider()
             
             GridRow{
-                Text("Carbo hidratos")
+                Text(AppTextVm.carbs.localized(for: languageManager.currentLanguage))
                 Text("\(macroDistributionVM.carbsPortions, specifier: "%.0f") portions")
             }
             Divider()
                
             GridRow{
-                Text("Proteinas")
+                Text(AppTextVm.proteins.localized(for: languageManager.currentLanguage))
                 Text("\(macroDistributionVM.proteinPortions,specifier: "%.0f") portions")
             }
             Divider()
             GridRow{
-                Text("Grasa")
+                Text(AppTextVm.fats.localized(for: languageManager.currentLanguage))
                 Text("\(macroDistributionVM.fatsPortions,specifier: "%.0f") portions")
             }
             Divider()
-            Button("Clean"){
+            Button(AppTextVm.cleanButton.localized(for: languageManager.currentLanguage)){
                 dismiss();
                 userDataVM.cleanResetForm()
                 
@@ -54,7 +55,9 @@ struct MacroCard: View {
 #Preview {
     let userDataVM = UserDataViewModel()
     let macroDistributionVM = MacroDistributionVM(userDataVm: userDataVM)
+    let laguageManger = LanguageManager()
     MacroCard()
         .environmentObject(userDataVM)
         .environmentObject(macroDistributionVM)
+        .environmentObject(laguageManger)
 }

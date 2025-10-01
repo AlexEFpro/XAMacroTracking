@@ -11,20 +11,18 @@ struct Logo: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         HStack{
-            if colorScheme == .dark{
-                Image("DarkLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 250, height: 250,alignment: .center)
-                
-            }else{
-                Image("LightLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 350, height: 350,alignment: .center)
-                    
-            }
             
+            Image(colorScheme == .dark ? "DarkLogo" : "LightLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth:350)
+                .padding(.top,16)
+            
+                
+            
+                
+                
+
                 
         }
         

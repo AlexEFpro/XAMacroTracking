@@ -8,19 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var languageManager:LanguageManager
     var body: some View {
-    Logo()
-    BasicForm()
-            .padding(.horizontal)
+        VStack(spacing: 8){
+            Logo()
+                .padding(.top,20)
+            LanguageButton()
+                .padding(.bottom,12)
+            BasicForm()
+                .padding(.horizontal)
+               
             
+        }
+            
+       
+        
     }
 }
 
 #Preview {
     let userDataVM=UserDataViewModel()
     let macroDistributionVM=MacroDistributionVM(userDataVm: userDataVM)
+    let languageManger=LanguageManager()
     
     ContentView()
         .environmentObject(userDataVM)
         .environmentObject(macroDistributionVM)
+        .environmentObject(languageManger)
 }

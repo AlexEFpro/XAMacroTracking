@@ -10,6 +10,7 @@ import SwiftUI
 struct BasicForm: View {
     @EnvironmentObject private var userDataVM: UserDataViewModel
     @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
+    @EnvironmentObject private var languageManager : LanguageManager
    
     var body: some View {
         Form{
@@ -19,7 +20,7 @@ struct BasicForm: View {
                 
                 HStack {
                     Spacer()
-                    Text("Ingresa los valores  acontinuación señalados ")
+                    Text(AppTextVm.MainInstruction.localized(for: languageManager.currentLanguage))
                         .font(.title2 .bold())
                         
                         
@@ -28,35 +29,36 @@ struct BasicForm: View {
                 
                 Slider(value: $userDataVM.weight, in: 30...200.0, step: 0.1)
                     .padding()
-                Text("Peso:\(userDataVM.weight, specifier: "%.1f")kg" )
+                Text(AppTextVm.weight.localized(for: languageManager.currentLanguage)+":") + Text("\(userDataVM.weight, specifier: "%.1f")kg" )
                     .font(.headline .bold())
                 
                 Slider( value: $userDataVM.height, in: 130...230, step: 0.1)
-                Text("Altura:\(userDataVM.height, specifier: "%.0f")cm")
+                Text(AppTextVm.height.localized(for: languageManager.currentLanguage)+":") + Text("\(userDataVM.height, specifier: "%.1f")cm")
                     .font(.headline .bold())
+                    
                 
-                    .padding()
+                    
                 HStack {
-                    Picker("Edad", selection: $userDataVM.age) {
+                    Picker(AppTextVm.age.localized(for: languageManager.currentLanguage), selection: $userDataVM.age) {
                         ForEach(15...100, id: \.self) {
                             Text("\($0)").tag(Double($0))
                         }
                     }
                     .padding()
-                    Picker("Gender", selection: $userDataVM.gender) {
-                        ForEach(UserDataViewModel.Gender.allCases, id: \.self) {
+                    Picker(AppTextVm.gender.localized(for: languageManager.currentLanguage), selection: $userDataVM.gender) {
+                        ForEach(UserDataViewModel.Gender.allCases,id: \.self){
                             Text($0.rawValue)
                         }
                     }
                 }
                 
-                Picker("Nivel de activiad fisica",selection: $userDataVM.activityLevel ){
+                Picker(AppTextVm.activityLevel.localized(for: languageManager.currentLanguage),selection: $userDataVM.activityLevel ){
                     ForEach(UserDataViewModel.ActivityLevel.allCases, id: \.self){
                         Text($0.rawValue)
                     }
                 }
                 .padding()
-                Picker("Objetivo",selection: $userDataVM.objective ){
+                Picker(AppTextVm.objective.localized(for: languageManager.currentLanguage),selection: $userDataVM.objective ){
                     ForEach(UserDataViewModel.Objective.allCases, id: \.self){
                         Text($0.rawValue)
                     }
@@ -64,7 +66,7 @@ struct BasicForm: View {
                 
                 
             
-                Button("Calcular"){
+                Button(AppTextVm.calculateButton.localized(for: languageManager.currentLanguage)){
                     userDataVM.goToSheet = true;
                     //userDataVM.gastoBasal();
                     macroDistributionVM.allCalculations()
@@ -89,9 +91,11 @@ struct BasicForm: View {
 #Preview {
     let userDataVM = UserDataViewModel()
     let macroDistributionVM = MacroDistributionVM(userDataVm: userDataVM)
+    let languageManager = LanguageManager()
     
     BasicForm()
         .environmentObject(userDataVM)
         .environmentObject(macroDistributionVM)
+        .environmentObject(languageManager)
 }
 

@@ -14,6 +14,7 @@ struct XAMacroTrackingApp: App {
     // instancias
     @StateObject private var userDataVM : UserDataViewModel
     @StateObject private var macroDistributionVM : MacroDistributionVM
+    @StateObject private var languageManager = LanguageManager()
     init() {
             let userData = UserDataViewModel()
             _userDataVM = StateObject(wrappedValue: userData)
@@ -25,6 +26,7 @@ struct XAMacroTrackingApp: App {
             ContentView()
                 .environmentObject(userDataVM)
                 .environmentObject(macroDistributionVM)
+                .environmentObject(languageManager)
         }
     }
 }
