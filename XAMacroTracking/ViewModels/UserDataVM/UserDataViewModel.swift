@@ -22,10 +22,12 @@ class UserDataViewModel: ObservableObject {
     
     
     enum Gender: String, CaseIterable {
+        
         case male
         case female
     }
     enum ActivityLevel: String, CaseIterable {
+        
         case sedentary = "No excercise"
         case lightlyActive = "1-3 /week"
         case moderatelyActive = "3-5 days/week"
@@ -87,4 +89,36 @@ class UserDataViewModel: ObservableObject {
 
     
     
+}
+
+extension UserDataViewModel.ActivityLevel{
+    func localized(for language : Language)-> String{
+        switch self{
+        case .sedentary : return language == .english ? "No excercise" : "Sedentario"
+        case .lightlyActive : return language == .english ? "1-3 days/week" : "1-3 días/semana"
+        case .moderatelyActive : return language == .english ? "3-5 days/week" : "3-5 días/semana"
+        case .veryActive : return language == .english ? "6 >sessions/week" : "6 >sesiones/semana"
+            
+            
+        }
+    }
+}
+extension UserDataViewModel.Gender{
+    func localized(for language : Language)-> String{
+        switch self {
+        case .male : return language == .english ? "Men" : "Hombre"
+        case .female : return language == .english ? "Women" : "Mujer"
+        }
+    }
+   
+}
+extension UserDataViewModel.Objective{
+    func localixed(for language : Language)-> String{
+        
+        switch self {
+        case .bulk : return language == .english ? "Bulk" : "Volumen"
+            case .cut : return language == .english ? "Cut" : "Definición"
+            case .mantain : return language == .english ? "Maintain" : "Mantenimiento"
+        }
+    }
 }

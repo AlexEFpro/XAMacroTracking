@@ -17,24 +17,24 @@ struct MacroCard: View {
         Grid{
             GridRow{
                 Text(AppTextVm.energyRequirement.localized(for: languageManager.currentLanguage))
-                Text("\(userDataVM.gObjective, specifier: "%.0f")")
+                Text("\(userDataVM.gObjective, specifier: "%.0f") kcal")
             }
             Divider()
             
             GridRow{
                 Text(AppTextVm.carbs.localized(for: languageManager.currentLanguage))
-                Text("\(macroDistributionVM.carbsPortions, specifier: "%.0f") portions")
+                Text("\(macroDistributionVM.carbsPortions, specifier: "%.0f") \(AppTextVm.portions.localized(for: languageManager.currentLanguage))"  )
             }
             Divider()
                
             GridRow{
                 Text(AppTextVm.proteins.localized(for: languageManager.currentLanguage))
-                Text("\(macroDistributionVM.proteinPortions,specifier: "%.0f") portions")
+                Text("\(macroDistributionVM.proteinPortions,specifier: "%.0f") \(AppTextVm.portions.localized(for: languageManager.currentLanguage))")
             }
             Divider()
             GridRow{
                 Text(AppTextVm.fats.localized(for: languageManager.currentLanguage))
-                Text("\(macroDistributionVM.fatsPortions,specifier: "%.0f") portions")
+                Text("\(macroDistributionVM.fatsPortions,specifier: "%.0f") \(AppTextVm.portions.localized(for: languageManager.currentLanguage))")
             }
             Divider()
             Button(AppTextVm.cleanButton.localized(for: languageManager.currentLanguage)){

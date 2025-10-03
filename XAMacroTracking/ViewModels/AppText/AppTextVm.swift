@@ -23,6 +23,7 @@ enum AppTextVm {
     case proteins
     case fats
     case cleanButton
+    case portions
     func localized(for language : Language)-> String{
         let translations : [AppTextVm : [Language : String]] = [
             // BasicForm
@@ -47,8 +48,8 @@ enum AppTextVm {
                 .english : "Gender"
             ],
             .activityLevel: [
-                .spanish : "Nivel de actividad física",
-                .english : "Activity Level"
+                .spanish : "Frecuencia",
+                .english : "Frecuency"
                 
             ],
             .objective : [
@@ -79,7 +80,10 @@ enum AppTextVm {
             .cleanButton : [
                 .english : "Back",
                 .spanish : "Regresar"
-                ]
+                ],
+            .portions : [
+                .english : "portions",
+                .spanish : "porciones"]
             
             
         ]

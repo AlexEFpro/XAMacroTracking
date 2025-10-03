@@ -46,21 +46,22 @@ struct BasicForm: View {
                     }
                     .padding()
                     Picker(AppTextVm.gender.localized(for: languageManager.currentLanguage), selection: $userDataVM.gender) {
-                        ForEach(UserDataViewModel.Gender.allCases,id: \.self){
-                            Text($0.rawValue)
+                        ForEach(UserDataViewModel.Gender.allCases,id: \.self){gender in
+                            Text(gender.localized(for: languageManager.currentLanguage)).tag(gender)
+                            
                         }
                     }
                 }
                 
                 Picker(AppTextVm.activityLevel.localized(for: languageManager.currentLanguage),selection: $userDataVM.activityLevel ){
-                    ForEach(UserDataViewModel.ActivityLevel.allCases, id: \.self){
-                        Text($0.rawValue)
+                    ForEach(UserDataViewModel.ActivityLevel.allCases, id: \.self){level in Text(level.localized(for: languageManager.currentLanguage)).tag(level)
+                        
                     }
                 }
                 .padding()
                 Picker(AppTextVm.objective.localized(for: languageManager.currentLanguage),selection: $userDataVM.objective ){
-                    ForEach(UserDataViewModel.Objective.allCases, id: \.self){
-                        Text($0.rawValue)
+                    ForEach(UserDataViewModel.Objective.allCases, id: \.self){ objective in Text(objective.localixed(for: languageManager.currentLanguage)).tag(objective)
+                        
                     }
                 }
                 
