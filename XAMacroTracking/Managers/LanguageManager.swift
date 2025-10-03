@@ -13,6 +13,10 @@ enum Language: String , CaseIterable{
     case english = "English"
     case spanish = "Spanish"
     
+    var userImperial: Bool{
+        self == .english
+    }
+    
 }
 
 class LanguageManager : ObservableObject{

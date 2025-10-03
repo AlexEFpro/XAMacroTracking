@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BasicForm: View {
+struct BasicFormView: View {
     @EnvironmentObject private var userDataVM: UserDataViewModel
     @EnvironmentObject private var macroDistributionVM: MacroDistributionVM
     @EnvironmentObject private var languageManager : LanguageManager
@@ -27,14 +27,9 @@ struct BasicForm: View {
                     Spacer()
                 }
                 
-                Slider(value: $userDataVM.weight, in: 30...200.0, step: 0.1)
-                    .padding()
-                Text(AppTextVm.weight.localized(for: languageManager.currentLanguage)+":") + Text("\(userDataVM.weight, specifier: "%.1f")kg" )
-                    .font(.headline .bold())
+              weightSlider()
                 
-                Slider( value: $userDataVM.height, in: 130...230, step: 0.1)
-                Text(AppTextVm.height.localized(for: languageManager.currentLanguage)+":") + Text("\(userDataVM.height, specifier: "%.1f")cm")
-                    .font(.headline .bold())
+              heightSlider()
                     
                 
                     
@@ -94,7 +89,7 @@ struct BasicForm: View {
     let macroDistributionVM = MacroDistributionVM(userDataVm: userDataVM)
     let languageManager = LanguageManager()
     
-    BasicForm()
+    BasicFormView()
         .environmentObject(userDataVM)
         .environmentObject(macroDistributionVM)
         .environmentObject(languageManager)

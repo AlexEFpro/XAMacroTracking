@@ -15,7 +15,7 @@ struct ContentView: View {
                 .padding(.top,20)
             LanguageButton()
                 .padding(.bottom,12)
-            BasicForm()
+            BasicFormView()
                 .padding(.horizontal)
                
             

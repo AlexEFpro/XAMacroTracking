@@ -24,6 +24,8 @@ enum AppTextVm {
     case fats
     case cleanButton
     case portions
+    case weightUnit
+    case heightUnit
     func localized(for language : Language)-> String{
         let translations : [AppTextVm : [Language : String]] = [
             // BasicForm
@@ -83,7 +85,16 @@ enum AppTextVm {
                 ],
             .portions : [
                 .english : "portions",
-                .spanish : "porciones"]
+                .spanish : "porciones"],
+            .weightUnit : [
+                .english : "lbs",
+                .spanish : "kg"
+                    ],
+            .heightUnit : [
+                .english : "ft",
+                .spanish : "cm"
+                
+            ]
             
             
         ]
