@@ -19,12 +19,15 @@ struct BasicFormView: View {
             Section{
                 
                 HStack {
+                    
                     Spacer()
                     Text(AppTextVm.MainInstruction.localized(for: languageManager.currentLanguage))
                         .font(.title2 .bold())
                     
                     
+                    
                     Spacer()
+                    disclaimerButton()
                 }
                 
                 weightSlider()
@@ -47,6 +50,10 @@ struct BasicFormView: View {
                 .environmentObject(userDataVM)
                 .environmentObject(macroDistributionVM)
             
+        }
+        .sheet(isPresented: $userDataVM.goToDisclaimer){
+            disclaimerCitations()
+                .environmentObject(languageManager)
         }
     }
 }

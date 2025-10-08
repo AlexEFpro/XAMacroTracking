@@ -19,6 +19,7 @@ class UserDataViewModel: ObservableObject {
     @Published var gastoBasalCalculado: Double = 0
     @Published var geaf: Double = 0
     @Published var gObjective : Double = 0
+    @Published var goToDisclaimer : Bool = false
     
     
     enum Gender: String, CaseIterable {

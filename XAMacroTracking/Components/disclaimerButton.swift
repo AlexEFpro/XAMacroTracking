@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct disclaimerButton: View {
+    @EnvironmentObject var userDataVM : UserDataViewModel
+    @EnvironmentObject var languageManager : LanguageManager
     var body: some View {
-        Button(action: {
+        Button(action: { userDataVM.goToDisclaimer = true
+            
             
         } , label: {
             Image(systemName: "info.circle")
@@ -18,8 +21,11 @@ struct disclaimerButton: View {
            
        })
     }
+        
 }
 
 #Preview {
+    let languageManager = LanguageManager()
     disclaimerButton()
+        .environmentObject(languageManager)
 }
