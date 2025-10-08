@@ -26,6 +26,9 @@ enum AppTextVm {
     case portions
     case weightUnit
     case heightUnit
+    case disclaimer
+    case citations
+    
     func localized(for language : Language)-> String{
         let translations : [AppTextVm : [Language : String]] = [
             // BasicForm
@@ -82,19 +85,32 @@ enum AppTextVm {
             .cleanButton : [
                 .english : "Back",
                 .spanish : "Regresar"
-                ],
+            ],
             .portions : [
                 .english : "portions",
                 .spanish : "porciones"],
             .weightUnit : [
                 .english : "lbs",
                 .spanish : "kg"
-                    ],
+            ],
             .heightUnit : [
                 .english : "ft",
                 .spanish : "cm"
                 
-            ]
+            ],
+            .disclaimer: [
+                .english: " This app is intended for informational and educational purposes only. It does not provide medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition, nutrition, or fitness program. ",
+                
+                    .spanish: "Esta aplicación tiene fines informativos y educativos únicamente. No proporciona consejos médicos, diagnóstico ni tratamiento. Siempre busca la asesoría de tu médico o otro profesional de la salud calificado con cualquier pregunta que puedas tener sobre una condición médica, nutrición o programa de entrenamiento."
+                
+                
+            ],
+            .citations: [
+                .english:"Sources: Basal expenditure: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Activity factors: Shils ME, Shike M. Modern nutrition in health and disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Energy balance: Hall KD. A computational model of energy balance and the regulation of body weight. Hum Body Compos. 2008;19(3):47-54.",
+                .spanish : " Fuentes: \n Gasto Basal:  Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Factores de actividad: Shils ME, Shike M. Modern Nutrition in Health and Disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Balance energetico: Hall KD. Computational model of energy balance and body weight regulation. Hum Body Compos. 2008;19(3):47-54."
+                
+                
+                ]
             
             
         ]

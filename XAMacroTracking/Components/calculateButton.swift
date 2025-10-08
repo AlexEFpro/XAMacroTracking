@@ -16,7 +16,7 @@ struct calculateButton: View {
         Button(AppTextVm.calculateButton.localized(for: languageManager.currentLanguage)){
             userDataVM.goToSheet = true;
             //userDataVM.gastoBasal();
-            macroDistributionVM.allCalculations()
+            macroDistributionVM.allCalculations(language: languageManager.currentLanguage)
         }
         .font(.title3.bold())
         .frame(maxWidth:.infinity)

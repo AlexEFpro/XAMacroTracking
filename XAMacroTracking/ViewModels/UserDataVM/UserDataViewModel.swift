@@ -39,7 +39,11 @@ class UserDataViewModel: ObservableObject {
         case mantain
     }
     
-    func gastoBasal(){
+    func gastoBasal(language:Language){
+        let weightInKg = language.userImperial ? weight.lbsToKg : weight
+        let heightInCm = language.userImperial ? height.inchesToCm : height
+        
+        
         if gender == .male{ gastoBasalCalculado = (10*weight)+(6.25*height)-(5*age+5)
             
             
@@ -70,8 +74,8 @@ class UserDataViewModel: ObservableObject {
         }
     }
     
-    func userDataAllCalculations(){
-        gastoBasal();
+    func userDataAllCalculations(language:Language){
+        gastoBasal(language:language);
         geafCalc();
         gObjectiveCalc();
     }

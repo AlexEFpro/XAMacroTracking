@@ -52,8 +52,8 @@ class MacroDistributionVM: ObservableObject {
         fatsPortions = (grFats * 9) / 45
         
     }
-    func allCalculations(){
-        userDataVm.userDataAllCalculations()
+    func allCalculations(language: Language){
+        userDataVm.userDataAllCalculations(language: language)
         calcMacroGrams()
         calcMacroPortions()
     }

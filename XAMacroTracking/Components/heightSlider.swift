@@ -14,7 +14,7 @@ struct heightSlider: View {
     
     var body: some View {
         Slider( value: $userDataVM.height, in: 130...230, step: 0.1)
-        Text(AppTextVm.height.localized(for: languageManager.currentLanguage)+":") + Text("\(userDataVM.height, specifier: "%.1f") \(AppTextVm.heightUnit.localized(for: languageManager.currentLanguage))")
+        Text(AppTextVm.height.localized(for: languageManager.currentLanguage)+":") + Text(languageManager.currentLanguage.userImperial ? "\(userDataVM.height.cmToInches, specifier: "%.0f") \(AppTextVm.heightUnit.localized(for: languageManager.currentLanguage))" : "\(userDataVM.height, specifier: "%.0f")\(AppTextVm.heightUnit.localized(for: languageManager.currentLanguage))")
             .font(.headline .bold())
     }
 }

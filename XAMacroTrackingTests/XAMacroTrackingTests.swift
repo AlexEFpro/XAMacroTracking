@@ -12,12 +12,13 @@ struct XAMacroTrackingTests {
     
     @Test("Test Gasto Basal") func gastoBasal(){
         // Male
+        let language = LanguageManager()
         let vmMale = UserDataViewModel()
         vmMale.weight = 70
         vmMale.height = 175
         vmMale.age = 25
         vmMale.gender = .male
-        vmMale.gastoBasal()
+        vmMale.gastoBasal(language: language.currentLanguage)
         #expect(vmMale.gastoBasalCalculado == (10*vmMale.weight)+(6.25*vmMale.height)-(5*vmMale.age+5))
         //Female
         let vmFemale = UserDataViewModel()
@@ -25,7 +26,7 @@ struct XAMacroTrackingTests {
         vmFemale.height = 165
         vmFemale.age = 30
         vmFemale.gender = .female
-        vmFemale.gastoBasal()
+        vmFemale.gastoBasal(language: language.currentLanguage)
         #expect(vmFemale.gastoBasalCalculado  == (10*vmFemale.weight)+(6.25*vmFemale.height)-(5*vmFemale.age)-161)
         
         
