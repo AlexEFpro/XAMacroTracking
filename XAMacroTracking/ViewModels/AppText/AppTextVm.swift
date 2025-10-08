@@ -106,8 +106,8 @@ enum AppTextVm {
                 
             ],
             .citations: [
-                .english:"Sources: Basal expenditure: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Activity factors: Shils ME, Shike M. Modern nutrition in health and disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Energy balance: Hall KD. A computational model of energy balance and the regulation of body weight. Hum Body Compos. 2008;19(3):47-54.",
-                .spanish : " Fuentes: \n Gasto Basal:  Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Factores de actividad: Shils ME, Shike M. Modern Nutrition in Health and Disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Balance energetico: Hall KD. Computational model of energy balance and body weight regulation. Hum Body Compos. 2008;19(3):47-54."
+                .english:"Sources: Basal expenditure: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Activity factors: Shils ME, Shike M. Modern nutrition in health and disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Energy balance: Hall Kevin D. (2017) ObesityEnergetics BodyWeight Regulation and the effects of Diet Composition",
+                .spanish : " Fuentes: \n Gasto Basal:  Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990;51(2):241-247. \n Factores de actividad: Shils ME, Shike M. Modern Nutrition in Health and Disease. 10th ed. Lippincott Williams & Wilkins; 2006. \n Balance energetico: Hall Kevin D. (2017) ObesityEnergetics BodyWeight Regulation and the effects of Diet Composition."
                 
                 
                 ]

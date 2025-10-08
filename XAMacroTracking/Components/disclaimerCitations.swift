@@ -9,6 +9,7 @@ import SwiftUI
 
 struct disclaimerCitations: View {
     @EnvironmentObject var languageManager: LanguageManager
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
             Grid{
@@ -30,6 +31,13 @@ struct disclaimerCitations: View {
             }
         }
         .padding()
+        Button(action: {dismiss()}, label: {
+            Text("OK")
+                .font(.headline .bold())
+                .padding()
+        })
+        .buttonStyle(.borderedProminent)
+        
     }
 }
 
