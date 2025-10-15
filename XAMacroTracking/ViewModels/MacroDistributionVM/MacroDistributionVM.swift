@@ -58,6 +58,23 @@ class MacroDistributionVM: ObservableObject {
         calcMacroPortions()
     }
     
+    enum nutrientType: String,CaseIterable{
+        case CerealsA = "CerealsA",
+             CerealsB = "CerealsB",
+             Legumes = "Legumes",
+             Fruits = "Fruits",
+             Vegetables = "Vegetables",
+             DairyA = "DaiiryA",
+             DayriB = "DairyB",
+             ProteinsAB = "ProteinsAB",
+             ProteinsC = "ProteinsC",
+             FatsA = "FatsA",
+             FatsB = "FatsB",
+             Sugar = "Sugar"
+        
+        
+    }
+    
     
     
 }
